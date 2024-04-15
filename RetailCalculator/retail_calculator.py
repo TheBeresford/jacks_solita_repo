@@ -10,3 +10,10 @@ print(f"Selling goods with price {value_of_good}.")
 
 total_price = num_of_goods * value_of_good
 print(f"Total price of transaction: {total_price}")
+
+utah_tax_rate = 0.0685
+tax_amount = total_price * utah_tax_rate
+print(f"Tax amount: {tax_amount}")
+
+price_after_tax = total_price + tax_amount
+print(f"Total price after tax: {price_after_tax}")
