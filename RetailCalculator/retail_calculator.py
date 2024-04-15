@@ -57,13 +57,19 @@ tax_amount = price_after_discount * utah_tax_rate
 print(f"Tax amount: {round(tax_amount)}")
 
 price_after_tax = price_after_discount + tax_amount
-print(f"Total price after tax: {round(price_after_tax, 2)}")
+print(f"Total price after tax: {round(price_after_tax, 2)}\n")
 
 # writing the reciept
 kuitti = "-" * 16
 
-kuitti = kuitti + f"\nTotal price.......{total_price}"
 kuitti = kuitti + f"\nNumber of items...{num_of_goods}"
 kuitti = kuitti + f"\nValue of individual items...{value_of_good}"
+kuitti = kuitti + f"\nTotal price.......{total_price}"
+kuitti = kuitti + f"\n\nDiscount...{discount_amount}"
+kuitti = kuitti + f"\nPrice after discount...{price_after_discount}"
+kuitti = kuitti + f"\nTax amount added...{tax_amount}"
+kuitti = kuitti + f"\n\nTotal...{price_after_tax}\n"
+
+kuitti = kuitti + "-" * 16
 
 print(kuitti)
