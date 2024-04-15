@@ -58,3 +58,12 @@ print(f"Tax amount: {round(tax_amount)}")
 
 price_after_tax = price_after_discount + tax_amount
 print(f"Total price after tax: {round(price_after_tax, 2)}")
+
+# writing the reciept
+kuitti = "-" * 16
+
+kuitti = kuitti + f"\nTotal price.......{total_price}"
+kuitti = kuitti + f"\nNumber of items...{num_of_goods}"
+kuitti = kuitti + f"\nValue of individual items...{value_of_good}"
+
+print(kuitti)
