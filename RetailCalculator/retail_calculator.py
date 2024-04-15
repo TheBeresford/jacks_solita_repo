@@ -11,23 +11,30 @@ product_names_and_prices = {
     "kissa": 5000000,
 }
 
+# take user input on the good they want to purchase and the number of said good
 while True:
-    name_of_good = input("Input the name of the good: ")
-    if name_of_good in product_names_and_prices.keys:
+    name_of_good = input(f"Input the name of the good {[x for x in product_names_and_prices.keys()]}: ")
+    if name_of_good.lower() in product_names_and_prices.keys():
         break
     else:
         print("Invalid product name.")
 print(f"Selling {name_of_good}.")
 
 while True:
-    num_of_goods = int(input("Input the number of goods: "))
-    if isinstance(num_of_goods, int):
-        break
-    else:
+    try:
+        num_of_goods = int(input("Input the number of goods: "))
+    except:
         print("Invalid number of goods.")
+    else:
+        if num_of_goods < 1:
+            print("Invalid number of goods. No negative numbers...")
+            continue
+        break
 print(f"Selling {num_of_goods} goods.")
 
-total_price = num_of_goods * name_of_good
+# calculating the values of the goods, line items and total price
+value_of_good = product_names_and_prices[name_of_good]
+total_price = value_of_good * num_of_goods
 print(f"Total price of transaction: {round(total_price)}")
 
 
