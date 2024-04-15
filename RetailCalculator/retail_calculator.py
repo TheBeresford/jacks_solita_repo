@@ -11,12 +11,12 @@ assert isinstance(value_of_good, float)
 print(f"Selling goods with price {value_of_good}.")
 
 total_price = num_of_goods * value_of_good
-print(f"Total price of transaction: {total_price}")
+print(f"Total price of transaction: {round(total_price)}")
 
 
 def requirements_for_next_discount(total_price, value_of_good, discount_rate_ceiling):
     diff_to_next_discount = discount_rate_ceiling - total_price
-    print(f"Amount needed for next discount rate: {diff_to_next_discount}.")
+    print(f"Amount needed for next discount rate: {round(diff_to_next_discount)}.")
     num_of_items_needed = math.ceil(diff_to_next_discount / value_of_good)
     print(f"Number of items needed for next discount rate: {num_of_items_needed}")
 
@@ -54,7 +54,7 @@ print(f"Working in state: {state_code}")
 
 utah_tax_rate = tax_dictionary[state_code]
 tax_amount = price_after_discount * utah_tax_rate
-print(f"Tax amount: {tax_amount}")
+print(f"Tax amount: {round(tax_amount)}")
 
 price_after_tax = price_after_discount + tax_amount
-print(f"Total price after tax: {price_after_tax}")
+print(f"Total price after tax: {round(price_after_tax, 2)}")
