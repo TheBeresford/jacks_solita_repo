@@ -41,26 +41,26 @@ print(f"Total price of transaction: {round(total_price)}")
 def requirements_for_next_discount(total_price, value_of_good, discount_rate_ceiling):
     diff_to_next_discount = discount_rate_ceiling - total_price
     print(f"Amount needed for next discount rate: {round(diff_to_next_discount)}.")
-    num_of_items_needed = math.ceil(diff_to_next_discount / value_of_good)
+    num_of_items_needed = math.ceil(diff_to_next_discount / int(value_of_good))
     print(f"Number of items needed for next discount rate: {num_of_items_needed}")
 
 
 # Discounts
 if total_price < 1000:
     discount_percentage = 0
-    requirements_for_next_discount(total_price, name_of_good, 1000)
+    requirements_for_next_discount(total_price, value_of_good, 1000)
 elif total_price >= 1000 and total_price < 5000:
     discount_percentage = 0.03
-    requirements_for_next_discount(total_price, name_of_good, 5000)
+    requirements_for_next_discount(total_price, value_of_good, 5000)
 elif total_price >= 5000 and total_price < 7000:
     discount_percentage = 0.05
-    requirements_for_next_discount(total_price, name_of_good, 7000)
+    requirements_for_next_discount(total_price, value_of_good, 7000)
 elif total_price >= 7000 and total_price < 10000:
     discount_percentage = 0.07
-    requirements_for_next_discount(total_price, name_of_good, 10000)
+    requirements_for_next_discount(total_price, value_of_good, 10000)
 elif total_price >= 10000 and total_price < 50000:
     discount_percentage = 0.10
-    requirements_for_next_discount(total_price, name_of_good, 50000)
+    requirements_for_next_discount(total_price, value_of_good, 50000)
 else:
     discount_percentage = 0.15
 
@@ -84,16 +84,16 @@ price_after_tax = price_after_discount + tax_amount
 print(f"Total price after tax: {round(price_after_tax, 2)}\n")
 
 # writing the reciept
-kuitti = "-" * 16
+kuitti = "-" * 24
 
-kuitti = kuitti + f"\nNumber of items...{num_of_goods}"
+kuitti = kuitti + f"\nNumber of items.............{num_of_goods}"
 kuitti = kuitti + f"\nValue of individual items...{name_of_good}"
-kuitti = kuitti + f"\nTotal price.......{total_price}"
-kuitti = kuitti + f"\n\nDiscount...{discount_amount}"
-kuitti = kuitti + f"\nPrice after discount...{price_after_discount}"
-kuitti = kuitti + f"\nTax amount added...{tax_amount}"
-kuitti = kuitti + f"\n\nTotal...{price_after_tax}\n"
+kuitti = kuitti + f"\nTotal price.................{round(total_price,2)}\n"
+kuitti = kuitti + f"\nDiscount....................{round(discount_amount,2)}"
+kuitti = kuitti + f"\nPrice after discount........{round(price_after_discount,2)}"
+kuitti = kuitti + f"\nTax amount added............{round(tax_amount,2)}\n"
+kuitti = kuitti + f"\nTotal.......................{round(price_after_tax,2)}\n"
 
-kuitti = kuitti + "-" * 16
+kuitti = kuitti + "-" * 24
 
 print(kuitti)
