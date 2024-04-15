@@ -1,0 +1,22 @@
+[
+    {
+        "OrderValue": 1000,
+        "Discount": 0.03
+    },
+    {
+        "OrderValue": 5000,
+        "Discount": 0.05
+    },
+    {
+        "OrderValue": 7000,
+        "Discount": 0.07
+    },
+    {
+        "OrderValue": 10000,
+        "Discount": 0.1
+    },
+    {
+        "OrderValue": 50000,
+        "Discount": 0.15
+    }
+]

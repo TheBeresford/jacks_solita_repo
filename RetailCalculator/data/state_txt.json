@@ -1,0 +1,27 @@
+[
+     {
+        "State": "UTAH",
+        "StateCode": "UT",
+        "TaxPercentage": 6.85
+     },
+     {
+        "State": "NEVADA",
+        "StateCode": "NV",
+        "TaxPercentage": 8.00
+     },
+     {
+        "State": "TEXAS",
+        "StateCode": "TX",
+        "TaxPercentage": 6.25
+     },
+     {
+        "State": "ALABAMA",
+        "StateCode": "AL",
+        "TaxPercentage": 4.00
+     },
+     {
+        "State": "CALIFORNIA",
+        "StateCode": "CA",
+        "TaxPercentage": 8.25
+     }
+]
