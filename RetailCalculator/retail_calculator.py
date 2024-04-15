@@ -11,14 +11,23 @@ print(f"Selling goods with price {value_of_good}.")
 total_price = num_of_goods * value_of_good
 print(f"Total price of transaction: {total_price}")
 
+# Discounts
+discount_percentage = 0.03 if total_price >= 1000 else 0
+print(f"Discount percentage: {discount_percentage}")
+discount_amount = total_price * discount_percentage
+print(f"Discount amount: {discount_amount}")
+
+price_after_discount = total_price - discount_amount
+
+# Taxes
 tax_dictionary = {"UT": 0.0685, "NV": 0.08, "TX": 0.0625, "AL": 0.04, "CA": 0.0825}
 
-state_code = input("Input state code: ")
+state_code = input("Input state code (UT, NV, TX, AL, CA):")
 print(f"Working in state: {state_code}")
 
 utah_tax_rate = tax_dictionary[state_code]
-tax_amount = total_price * utah_tax_rate
+tax_amount = price_after_discount * utah_tax_rate
 print(f"Tax amount: {tax_amount}")
 
-price_after_tax = total_price + tax_amount
+price_after_tax = price_after_discount + tax_amount
 print(f"Total price after tax: {price_after_tax}")
