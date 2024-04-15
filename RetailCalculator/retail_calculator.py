@@ -1,3 +1,5 @@
+import math
+
 print("Retail calculator started.")
 
 num_of_goods = int(input("Input the number of goods: "))
@@ -11,17 +13,30 @@ print(f"Selling goods with price {value_of_good}.")
 total_price = num_of_goods * value_of_good
 print(f"Total price of transaction: {total_price}")
 
+
+def requirements_for_next_discount(total_price, value_of_good, discount_rate_ceiling):
+    diff_to_next_discount = discount_rate_ceiling - total_price
+    print(f"Amount needed for next discount rate: {diff_to_next_discount}.")
+    num_of_items_needed = math.ceil(diff_to_next_discount / value_of_good)
+    print(f"Number of items needed for next discount rate: {num_of_items_needed}")
+
+
 # Discounts
 if total_price < 1000:
     discount_percentage = 0
+    requirements_for_next_discount(total_price, value_of_good, 1000)
 elif total_price >= 1000 and total_price < 5000:
     discount_percentage = 0.03
+    requirements_for_next_discount(total_price, value_of_good, 5000)
 elif total_price >= 5000 and total_price < 7000:
     discount_percentage = 0.05
+    requirements_for_next_discount(total_price, value_of_good, 7000)
 elif total_price >= 7000 and total_price < 10000:
     discount_percentage = 0.07
+    requirements_for_next_discount(total_price, value_of_good, 10000)
 elif total_price >= 10000 and total_price < 50000:
     discount_percentage = 0.10
+    requirements_for_next_discount(total_price, value_of_good, 50000)
 else:
     discount_percentage = 0.15
 
